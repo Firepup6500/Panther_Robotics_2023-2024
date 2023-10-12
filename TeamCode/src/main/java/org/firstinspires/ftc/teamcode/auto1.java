@@ -9,9 +9,9 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@Disabled
+//@Disabled
 @Autonomous(name="Autonomous Template", group="Templates")
-public class autotemplate extends LinearOpMode
+public class auto1 extends LinearOpMode
 {
     private final ElapsedTime runtime = new ElapsedTime();
     DcMotor tLeft;
@@ -42,9 +42,12 @@ public class autotemplate extends LinearOpMode
         telemetry.addData("Status", "Ready to run");
         telemetry.update();
         waitForStart();
-        /*
-        * Your code goes here
-        */
+        motor.forward(1);
+        runtime.reset();
+        while (opModeIsActive() && runtime.seconds()<1.5) {
+            telemetry.addData("Path", "Get to Marker: %4.1f S Elapsed", runtime.seconds());
+            telemetry.update();
+        }
         motor.stop();
         runtime.reset();
         while (opModeIsActive()) {

@@ -1,24 +1,25 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 public class normalcontrol {
     DcMotor tLeft;
     DcMotor tRight;
     DcMotor bLeft;
     DcMotor bRight;
-    DcMotor mArm;
+    //DcMotor mArm;
     public void init()
     {
         tLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         tRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         bLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         bRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        tLeft.setDirection(DcMotor.Direction.REVERSE);
+        tLeft.setDirection(DcMotor.Direction.FORWARD);
         tRight.setDirection(DcMotor.Direction.FORWARD);
         bLeft.setDirection(DcMotor.Direction.FORWARD);
         bRight.setDirection(DcMotor.Direction.REVERSE);
-        mArm.setDirection(DcMotor.Direction.FORWARD);
+        //mArm.setDirection(DcMotor.Direction.FORWARD);
     }
     public void target(int tLTarget, int tRTarget, int bLTarget, int bRTarget)
     {
