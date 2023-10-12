@@ -9,6 +9,9 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 
+import org.checkerframework.framework.qual.DefaultInUncheckedCodeFor;
+
+@Disabled
 @Autonomous(name="Autonomous OpMode Park ONLY - DO NOT USE", group="Production")
 public class autonomousnew extends LinearOpMode {
     ColorSensor color;
