@@ -24,6 +24,10 @@ public class mecanumteleop extends LinearOpMode {
         DcMotor motorBackLeft = hardwareMap.dcMotor.get("left_back_drive");
         DcMotor motorFrontRight = hardwareMap.dcMotor.get("right_front_drive");
         DcMotor motorBackRight = hardwareMap.dcMotor.get("right_back_drive");
+        motorFrontLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        motorBackLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        motorFrontRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        motorBackRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         //DcMotor motorExtension = hardwareMap.dcMotor.get("motor_up");
         //Servo motorGrab = hardwareMap.servo.get("servo");
         // Reverse the right side motors
