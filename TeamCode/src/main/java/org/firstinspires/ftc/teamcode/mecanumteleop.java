@@ -43,7 +43,7 @@ public class mecanumteleop extends LinearOpMode {
             double y = gamepad1.left_stick_y * -1; // Remember, this is reversed!
             double x = gamepad1.left_stick_x; // Counteract imperfect strafing
             double rx = gamepad1.right_stick_x;
-            //boolean rb = gamepad1.right_bumper;
+            boolean rb = gamepad1.right_bumper;
             boolean lb = gamepad1.left_bumper;
             //double rt = gamepad1.right_trigger;
             //double lt = gamepad1.left_trigger;
