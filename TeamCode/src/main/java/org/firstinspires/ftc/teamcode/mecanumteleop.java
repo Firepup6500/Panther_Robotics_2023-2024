@@ -34,6 +34,7 @@ public class mecanumteleop extends LinearOpMode {
         // Reverse left motors if you are using NeveRests
         //motorFrontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
         motorBackRight.setDirection(DcMotorSimple.Direction.REVERSE);
+        double rbp = 1;
 
         waitForStart();
 
@@ -47,14 +48,9 @@ public class mecanumteleop extends LinearOpMode {
             boolean lb = gamepad1.left_bumper;
             //double rt = gamepad1.right_trigger;
             //double lt = gamepad1.left_trigger;
-
-            double rbp = 1;
             //double rbp = 0.30;
             if(buttonClick(rb)) {
-                if(rbp == 2.0) {
-                    rbp = 2;
-                }
-                else {
+                if (rbp != 2.0) {
                     rbp += .01;
                 }
             }
@@ -64,7 +60,7 @@ public class mecanumteleop extends LinearOpMode {
             // Denominator is the largest motor power (absolute value) or 1
             // This ensures all the powers maintain the same ratio, but only when
             // at least one is out of the range [-1, 1]
-            double denominator = 1/2 * rbp;
+            double denominator = .5 * rbp;
             double frontLeftPower = ((y + x + rx) / denominator);
             double backLeftPower = ((y - x + rx) / denominator);
             double frontRightPower = ((y - x - rx) / denominator);
