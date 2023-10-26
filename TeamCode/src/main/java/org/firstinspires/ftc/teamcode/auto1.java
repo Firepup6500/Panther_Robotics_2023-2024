@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 //@Disabled
-@Autonomous(name="Autonomous Template", group="Templates")
+@Autonomous(name = "Autonomous 1 (23-24)", group = "Templates")
 public class auto1 extends LinearOpMode
 {
     private final ElapsedTime runtime = new ElapsedTime();

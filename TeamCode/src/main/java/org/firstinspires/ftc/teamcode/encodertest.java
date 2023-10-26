@@ -27,7 +27,7 @@ public class encodertest extends LinearOpMode {
         bRight = hardwareMap.dcMotor.get("back_right");
         motor.bRight = bRight;
         mArm = hardwareMap.dcMotor.get("motor_up");
-        motor.mArm = mArm;
+        //motor.mArm = mArm;
         motor.init();
         motor.enableEncoders();
         waitForStart();
