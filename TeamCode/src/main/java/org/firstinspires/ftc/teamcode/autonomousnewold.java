@@ -42,7 +42,7 @@ public class autonomousnewold extends LinearOpMode {
         motor.bRight = bRight;
         color = hardwareMap.get(ColorSensor.class, "Color1");
         mArm = hardwareMap.dcMotor.get("motor_up");
-        motor.mArm = mArm;
+        //motor.mArm = mArm;
         motorGrab = hardwareMap.servo.get("servo");
         motor.init();
         telemetry.addData("Status", "Ready to run");
