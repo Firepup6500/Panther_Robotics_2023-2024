@@ -22,11 +22,25 @@ public class DistanceSensorTest extends LinearOpMode {
         telemetry.update();
         waitForStart();
         resetRuntime();
+        double left;
+        double right;
+        int direction;
         while (opModeIsActive()) {
+            left = leftSensor.getDistance(DistanceUnit.MM);
+            right = rightSensor.getDistance(DistanceUnit.MM);
             telemetry.addData("Runtime", getRuntime());
-            telemetry.addData("Left", leftSensor.getDistance(DistanceUnit.MM));
-            //telemetry.addData("Center", centerSensor.getDistance(DistanceUnit.MM));
-            telemetry.addData("Right", rightSensor.getDistance(DistanceUnit.MM));
+            telemetry.addData("Left", left);
+            telemetry.addData("Right", right);
+            if (left-right >= 200) {
+                direction = 1;
+                telemetry.addData("Direction", "Right");
+            } else if (right-left >= 200) {
+                direction = -1;
+                telemetry.addData("Direction", "Left");
+            } else {
+                direction = 0;
+                telemetry.addData("Direction", "Forward");
+            }
             telemetry.update();
         }
     }
