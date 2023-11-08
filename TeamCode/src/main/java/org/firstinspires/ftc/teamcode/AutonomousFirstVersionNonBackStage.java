@@ -17,7 +17,8 @@ public class AutonomousFirstVersionNonBackStage extends LinearOpMode {
     DcMotor ArmLift;
     Servo Claw;
 
-    static final double Motor_Tick_Count = 1000;
+    static final double Motor_Tick_Count = 1120;
+
 
         @Override
         public void runOpMode() throws InterruptedException{
