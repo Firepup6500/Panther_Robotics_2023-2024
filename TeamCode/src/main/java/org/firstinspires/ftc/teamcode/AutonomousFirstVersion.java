@@ -6,12 +6,11 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 @Autonomous(name = "Autonomous Basic")
 
-public class AutonomousFirstVersionNonBackStage extends LinearOpMode {
+public class AutonomousFirstVersion extends LinearOpMode {
 
     DcMotor FrontR;
     DcMotor BackR;
@@ -20,7 +19,7 @@ public class AutonomousFirstVersionNonBackStage extends LinearOpMode {
     DcMotor ArmLift;
     Servo Claw;
 
-    static final double Motor_Tick_Count = 1120;
+    static final double Motor_Tick_Count = 6000;
 
 
         @Override
@@ -49,7 +48,9 @@ public class AutonomousFirstVersionNonBackStage extends LinearOpMode {
 
 
             resetRuntime();
-            EncoderForward((int) Motor_Tick_Count, .25);
+            EncoderForward((int) Motor_Tick_Count, .75);
+
+
             int direction;
             double left = leftSensor.getDistance(DistanceUnit.MM);
             double right = rightSensor.getDistance(DistanceUnit.MM);
@@ -84,7 +85,7 @@ public class AutonomousFirstVersionNonBackStage extends LinearOpMode {
 
             FrontL.setPower(speed);
             FrontR.setPower(speed);
-            BackL.setPower(speed);
+            BackL.setPower(.15);
             BackR.setPower(speed);
 
             while (opModeIsActive() && isBusy()) {
