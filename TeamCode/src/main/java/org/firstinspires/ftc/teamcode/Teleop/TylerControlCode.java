@@ -93,6 +93,16 @@ public class TylerControlCode extends OpMode {
                 ArmLift.setPower(.5);
 
             }
+            if(gamepad2.x){
+
+                Claw.setPosition(1);
+
+            }
+            if(gamepad2.b){
+
+                Claw.setPosition(0);
+
+            }
 
             FrontR.setPower(0);
             BackR.setPower(0);
