@@ -170,6 +170,33 @@ public class AutonomousFirstVersion extends LinearOpMode {
             }
         }
 
+        private void EncoderBackward(double target, double speed){
+
+            FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
+            FrontL.setTargetPosition((int) target);
+            FrontR.setTargetPosition((int) target);
+            BackL.setTargetPosition((int) target);
+            BackR.setTargetPosition((int) target);
+
+            FrontL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            FrontR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            BackL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            BackR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+            FrontL.setPower(speed);
+            FrontR.setPower(speed);
+            BackL.setPower(speed);
+            BackR.setPower(speed);
+
+            while (opModeIsActive() && isBusy()) {
+                idle();
+            }
+        }
+
     private boolean isBusy() {
         return FrontL.isBusy() && FrontR.isBusy() && BackL.isBusy() && BackR.isBusy();
     }
