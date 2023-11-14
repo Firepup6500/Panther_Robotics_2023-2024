@@ -31,10 +31,10 @@ public class DistanceSensorTest extends LinearOpMode {
             telemetry.addData("Runtime", getRuntime());
             telemetry.addData("Left", left);
             telemetry.addData("Right", right);
-            if (left-right >= 200) {
+            if (right <= 200) {
                 direction = 1;
                 telemetry.addData("Direction", "Right");
-            } else if (right-left >= 200) {
+            } else if (left <= 150) {
                 direction = -1;
                 telemetry.addData("Direction", "Left");
             } else {

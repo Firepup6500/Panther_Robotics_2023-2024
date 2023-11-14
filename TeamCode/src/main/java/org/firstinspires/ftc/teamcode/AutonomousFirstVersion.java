@@ -19,9 +19,6 @@ public class AutonomousFirstVersion extends LinearOpMode {
     DcMotor ArmLift;
     Servo Claw;
 
-    static final double Motor_Tick_Count = 6000;
-
-
         @Override
         public void runOpMode() throws InterruptedException {
 
@@ -37,46 +34,68 @@ public class AutonomousFirstVersion extends LinearOpMode {
 
             telemetry.addData("ftc", "first");
             telemetry.addData("Init", "is a success");
+            telemetry.update();
 
-            FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-            FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-            BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-            BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
             BackR.setDirection(DcMotorSimple.Direction.REVERSE);
 
             waitForStart();
 
 
             resetRuntime();
-            EncoderForward((int) Motor_Tick_Count, .75);
+            EncoderForward(1000, .75);
 
-
-            int direction;
-            double left = leftSensor.getDistance(DistanceUnit.MM);
-            double right = rightSensor.getDistance(DistanceUnit.MM);
-            telemetry.addData("Runtime", getRuntime());
-            telemetry.addData("Left", left);
-            telemetry.addData("Right", right);
-            if (left - right >= 200) {
-                direction = 1;
-                telemetry.addData("Direction", "Right");
-            } else if (right - left >= 200) {
-                direction = -1;
-                telemetry.addData("Direction", "Left");
-            } else {
-                direction = 0;
-                telemetry.addData("Direction", "Forward");
+            double left;
+            double right;
+            int direction = 3;
+            while (direction == 3) {
+                left = leftSensor.getDistance(DistanceUnit.MM);
+                right = rightSensor.getDistance(DistanceUnit.MM);
+                telemetry.addData("Runtime", getRuntime());
+                telemetry.addData("Left", left);
+                telemetry.addData("Right", right);
+                if (right <= 200) {
+                    direction = 1;
+                    telemetry.addData("Direction", "Right");
+                } else if (left <= 150) {
+                    direction = -1;
+                    telemetry.addData("Direction", "Left");
+                } else {
+                    direction = 0;
+                    telemetry.addData("Direction", "Forward");
+                }
+                telemetry.update();
             }
-            telemetry.update();
+
+
+            if(direction == 1){
+
+
+
+            }
+            else if(direction == -1){
+
+
+
+            }
+            else if(direction == 0){
+
+                EncoderForward(500, .5);
+
+            }
 
         }
 
         private void EncoderForward(double target, double speed){
 
-            FrontL.setTargetPosition((int)target);
-            FrontR.setTargetPosition((int)target);
-            BackL.setTargetPosition((int)target);
-            BackR.setTargetPosition((int)target);
+            FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
+            FrontL.setTargetPosition((int) target);
+            FrontR.setTargetPosition((int) target);
+            BackL.setTargetPosition((int) target);
+            BackR.setTargetPosition((int) target);
 
             FrontL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             FrontR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -85,7 +104,61 @@ public class AutonomousFirstVersion extends LinearOpMode {
 
             FrontL.setPower(speed);
             FrontR.setPower(speed);
-            BackL.setPower(.15);
+            BackL.setPower(speed);
+            BackR.setPower(speed);
+
+            while (opModeIsActive() && isBusy()) {
+                idle();
+            }
+        }
+
+        private void RightTurn(double target, double speed){
+
+            FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
+            FrontL.setTargetPosition((int) target);
+            FrontR.setTargetPosition((int) -target);
+            BackL.setTargetPosition((int)  target);
+            BackR.setTargetPosition((int) -target);
+
+            FrontL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            FrontR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            BackL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            BackR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+            FrontL.setPower(speed);
+            FrontR.setPower(speed);
+            BackL.setPower(speed);
+            BackR.setPower(speed);
+
+            while (opModeIsActive() && isBusy()) {
+                idle();
+            }
+        }
+
+        private void LeftTurn(double target, double speed){
+
+            FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
+            FrontL.setTargetPosition((int) -target);
+            FrontR.setTargetPosition((int) target);
+            BackL.setTargetPosition((int)  -target);
+            BackR.setTargetPosition((int)  target);
+
+            FrontL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            FrontR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            BackL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            BackR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+            FrontL.setPower(speed);
+            FrontR.setPower(speed);
+            BackL.setPower(speed);
             BackR.setPower(speed);
 
             while (opModeIsActive() && isBusy()) {
