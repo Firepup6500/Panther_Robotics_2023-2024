@@ -56,7 +56,7 @@ public class AutonomousFirstVersion extends LinearOpMode {
                 if (right <= 200) {
                     direction = 1;
                     telemetry.addData("Direction", "Right");
-                } else if (left <= 150) {
+                } else if (left <= 200) {
                     direction = -1;
                     telemetry.addData("Direction", "Left");
                 } else {
@@ -69,12 +69,16 @@ public class AutonomousFirstVersion extends LinearOpMode {
 
             if(direction == 1){
 
-
+                EncoderForward(500, .75);
+                RightTurn(1200, .75);
+                EncoderForward(200, .75);
 
             }
             else if(direction == -1){
 
-
+                EncoderForward(500, .75);
+                LeftTurn(1200, .75);
+                EncoderForward(200, .75);
 
             }
             else if(direction == 0){
