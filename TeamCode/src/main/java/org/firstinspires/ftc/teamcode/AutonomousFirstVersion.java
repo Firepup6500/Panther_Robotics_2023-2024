@@ -70,8 +70,11 @@ public class AutonomousFirstVersion extends LinearOpMode {
             if(direction == 1){
 
                 EncoderForward(500, .75);
-                RightTurn(1200, .75);
-                EncoderForward(200, .75);
+                RightTurn(1200, .5);
+                EncoderForward(200, .5);
+                EncoderBackward(200, .5);
+                LeftTurn(1100, .5);
+                EncoderBackward(1400, .75);
 
             }
             else if(direction == -1){
@@ -177,10 +180,10 @@ public class AutonomousFirstVersion extends LinearOpMode {
             BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
             BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
-            FrontL.setTargetPosition((int) target);
-            FrontR.setTargetPosition((int) target);
-            BackL.setTargetPosition((int) target);
-            BackR.setTargetPosition((int) target);
+            FrontL.setTargetPosition((int) -target);
+            FrontR.setTargetPosition((int) -target);
+            BackL.setTargetPosition((int) -target);
+            BackR.setTargetPosition((int) -target);
 
             FrontL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             FrontR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
