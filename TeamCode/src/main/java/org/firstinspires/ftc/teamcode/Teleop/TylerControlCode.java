@@ -70,13 +70,13 @@ public class TylerControlCode extends OpMode {
 
             }
 
-            if (gamepad1.b) {
+            if (gamepad1.x) {
 
                 StrafeRight(.5);
 
             }
 
-            if (gamepad1.x) {
+            if (gamepad1.b) {
 
                 StrafeLeft(.5);
 
@@ -84,13 +84,13 @@ public class TylerControlCode extends OpMode {
 
             if (gamepad2.right_bumper) {
 
-                ArmLift.setPower(-.5);
+                ArmLift.setPower(-5);
 
             }
 
             if (gamepad2.left_bumper) {
 
-                ArmLift.setPower(.5);
+                ArmLift.setPower(5);
 
             }
             if(gamepad2.x){
