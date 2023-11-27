@@ -76,7 +76,7 @@ public class AutonomousBlueFront extends LinearOpMode {
             LeftTurn(1100, .5);
             EncoderBackward(1400, .75);
             LeftTurn(1200, .5);
-            EncoderForward(200, .5);
+            EncoderForward(1800, .5);
 
         }
         else if(direction == -1){
@@ -88,7 +88,7 @@ public class AutonomousBlueFront extends LinearOpMode {
             RightTurn(1100, .5);
             EncoderBackward(1400, .75);
             LeftTurn(1200, .5);
-            EncoderForward(200, .5);
+            EncoderForward(1800, .5);
 
         }
         else if(direction == 0){
@@ -96,7 +96,7 @@ public class AutonomousBlueFront extends LinearOpMode {
             EncoderForward(500, .5);
             EncoderBackward(1900, .75);
             LeftTurn(1200, .5);
-            EncoderForward(200, .5);
+            EncoderForward(1800, .5);
 
         }
 
