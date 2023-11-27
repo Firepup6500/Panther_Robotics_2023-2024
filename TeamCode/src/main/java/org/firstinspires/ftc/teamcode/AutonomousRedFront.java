@@ -10,7 +10,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 @Autonomous(name = "Autonomous Basic")
 
-public class AutonomousFirstVersion extends LinearOpMode {
+public class AutonomousRedFront extends LinearOpMode {
 
     DcMotor FrontR;
     DcMotor BackR;
