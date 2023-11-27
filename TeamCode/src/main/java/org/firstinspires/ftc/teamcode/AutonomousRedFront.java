@@ -76,6 +76,7 @@ public class AutonomousRedFront extends LinearOpMode {
                 LeftTurn(1100, .5);
                 EncoderBackward(1400, .75);
                 RightTurn(1200, .5);
+                EncoderForward(200, .5);
 
             }
             else if(direction == -1){
@@ -86,13 +87,17 @@ public class AutonomousRedFront extends LinearOpMode {
                 EncoderBackward(200, .5);
                 RightTurn(1100, .5);
                 EncoderBackward(1400, .75);
-                LeftTurn(1200, .5);
-
+                RightTurn(1200, .5);
+                EncoderForward(200, .5);
+                
             }
             else if(direction == 0){
 
                 EncoderForward(500, .5);
-
+                EncoderBackward(1900, .75);
+                RightTurn(1200, .5);
+                EncoderForward(200, .5);
+                
             }
 
         }
