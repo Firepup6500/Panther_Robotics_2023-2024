@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
-@Autonomous(name = "Autonomous Basic")
+@Autonomous(name = "Autonomous Red Front")
 
 public class AutonomousRedFront extends LinearOpMode {
 
