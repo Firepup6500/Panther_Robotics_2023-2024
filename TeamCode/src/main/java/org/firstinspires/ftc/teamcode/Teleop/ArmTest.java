@@ -25,7 +25,7 @@ public class ArmTest extends OpMode {
         else if (gamepad2.left_bumper) {
             ArmLift.setPower(.5);
         } else {
-            ArmLift.setPower(.1);
+            ArmLift.setPower(-.1);
         }
     }
 }
