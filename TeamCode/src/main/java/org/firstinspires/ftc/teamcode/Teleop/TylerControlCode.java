@@ -29,6 +29,7 @@ public class TylerControlCode extends OpMode {
 
         telemetry.addData("ftc", "first");
         telemetry.addData("Init", "is a success");
+        telemetry.update();
     }
 
     @Override
