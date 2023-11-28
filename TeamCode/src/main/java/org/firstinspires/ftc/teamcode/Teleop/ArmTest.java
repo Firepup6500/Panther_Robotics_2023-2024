@@ -20,11 +20,12 @@ public class ArmTest extends OpMode {
     @Override
     public void loop() {
         if (gamepad2.right_bumper) {
-            ArmLift.setPower(-5);
+            ArmLift.setPower(-.5);
         }
-        if (gamepad2.left_bumper) {
-            ArmLift.setPower(5);
+        else if (gamepad2.left_bumper) {
+            ArmLift.setPower(.5);
+        } else {
+            ArmLift.setPower(.1);
         }
-        ArmLift.setPower(0);
     }
 }
