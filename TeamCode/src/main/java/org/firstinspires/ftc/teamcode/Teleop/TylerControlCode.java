@@ -85,13 +85,13 @@ public class TylerControlCode extends OpMode {
 
             if (gamepad2.right_bumper) {
 
-                ArmLift.setPower(-5);
+                ArmLift.setPower(-.5);
 
             }
 
             if (gamepad2.left_bumper) {
 
-                ArmLift.setPower(5);
+                ArmLift.setPower(.5);
 
             }
             if(gamepad2.x){
