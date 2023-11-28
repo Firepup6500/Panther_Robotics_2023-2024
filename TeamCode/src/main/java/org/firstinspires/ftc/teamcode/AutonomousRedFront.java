@@ -97,9 +97,9 @@ public class AutonomousRedFront extends LinearOpMode {
 
                 EncoderForward(500, .5);
                 Claw.setPosition(0);
-                EncoderBackward(1900, .75);
+                EncoderBackward(1400, .75);
                 RightTurn(1200, .5);
-                EncoderForward(1800, .5);
+                EncoderForward(2800, .5);
                 
             }
 
