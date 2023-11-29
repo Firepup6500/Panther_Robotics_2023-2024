@@ -53,7 +53,7 @@ public class AutonomousRedBack extends LinearOpMode {
             telemetry.addData("Runtime", getRuntime());
             telemetry.addData("Left", left);
             telemetry.addData("Right", right);
-            if (right <= 200) {
+            if (right <= 300) {
                 direction = 1;
                 telemetry.addData("Direction", "Right");
             } else if (left <= 200) {
@@ -76,8 +76,8 @@ public class AutonomousRedBack extends LinearOpMode {
             EncoderBackward(200, .5);
             LeftTurn(1100, .5);
             EncoderBackward(1400, .75);
-            RightTurn(1200, .5);
-            EncoderForward(600, .5);
+            RightTurn(1260, .5);
+            EncoderForward(2000, .5);
 
         }
         else if(direction == -1){
@@ -89,17 +89,17 @@ public class AutonomousRedBack extends LinearOpMode {
             EncoderBackward(200, .5);
             RightTurn(1100, .5);
             EncoderBackward(1400, .75);
-            RightTurn(1200, .5);
-            EncoderForward(600, .5);
+            RightTurn(1260, .5);
+            EncoderForward(2000, .5);
 
         }
         else if(direction == 0){
 
             EncoderForward(500, .5);
             Claw.setPosition(0);
-            EncoderBackward(1400, .75);
-            RightTurn(1200, .5);
-            EncoderForward(600, .5);
+            EncoderBackward(1225, .75);
+            RightTurn(1260, .5);
+            EncoderForward(2000, .5);
 
         }
 

@@ -53,7 +53,7 @@ public class AutonomousRedFront extends LinearOpMode {
                 telemetry.addData("Runtime", getRuntime());
                 telemetry.addData("Left", left);
                 telemetry.addData("Right", right);
-                if (right <= 200) {
+                if (right <= 300) {
                     direction = 1;
                     telemetry.addData("Direction", "Right");
                 } else if (left <= 200) {
@@ -76,8 +76,8 @@ public class AutonomousRedFront extends LinearOpMode {
                 EncoderBackward(200, .5);
                 LeftTurn(1100, .5);
                 EncoderBackward(1400, .75);
-                RightTurn(1200, .5);
-                EncoderForward(1800, .5);
+                RightTurn(1240, .5);
+                EncoderForward(4800, .5);
 
             }
             else if(direction == -1){
@@ -89,8 +89,8 @@ public class AutonomousRedFront extends LinearOpMode {
                 EncoderBackward(200, .5);
                 RightTurn(1100, .5);
                 EncoderBackward(1400, .75);
-                RightTurn(1200, .5);
-                EncoderForward(1800, .5);
+                RightTurn(1240, .5);
+                EncoderForward(4400, .5);
                 
             }
             else if(direction == 0){
@@ -98,7 +98,7 @@ public class AutonomousRedFront extends LinearOpMode {
                 EncoderForward(500, .5);
                 Claw.setPosition(0);
                 EncoderBackward(1225, .75);
-                RightTurn(1240, .5);
+                RightTurn(1260, .5);
                 EncoderForward(4400, .5);
                 
             }
