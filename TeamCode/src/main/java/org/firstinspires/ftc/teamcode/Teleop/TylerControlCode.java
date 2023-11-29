@@ -104,7 +104,7 @@ public class TylerControlCode extends OpMode {
                 Claw.setPosition(0);
 
             }
-
+            // Are you  intentionally 0ing these?
             FrontR.setPower(0);
             BackR.setPower(0);
             FrontL.setPower(0);
