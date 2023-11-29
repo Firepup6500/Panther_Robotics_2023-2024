@@ -34,75 +34,41 @@ public class TylerControlCode extends OpMode {
 
     @Override
     public void loop() {
-
             if (gamepad1.right_trigger > .1) {
-
                 forward(.5);
-
             }
-
             if (gamepad1.right_trigger > .75) {
-
                 forward(1);
-
             }
-
             if (gamepad1.left_trigger > .1) {
-
                 backward(.5);
-
             }
-
             if (gamepad1.left_trigger > .75) {
-
                 backward(1);
-
             }
-
             if (gamepad1.right_bumper) {
-
                 TurnRight(.5);
-
             }
-
             if (gamepad1.left_bumper) {
-
                 TurnLeft(.5);
-
             }
-
             if (gamepad1.x) {
-
                 StrafeRight(.5);
-
             }
-
             if (gamepad1.b) {
-
                 StrafeLeft(.5);
-
             }
-
             if (gamepad2.right_bumper) {
-
                 ArmLift.setPower(-.5);
-
             }
-
             if (gamepad2.left_bumper) {
-
                 ArmLift.setPower(.5);
-
             }
             if(gamepad2.x){
-
                 Claw.setPosition(1);
-
             }
             if(gamepad2.b){
-
                 Claw.setPosition(0);
-
             }
             // Are you  intentionally 0ing these?
             FrontR.setPower(0);
