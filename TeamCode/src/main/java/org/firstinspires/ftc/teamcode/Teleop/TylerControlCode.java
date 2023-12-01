@@ -34,27 +34,27 @@ public class TylerControlCode extends OpMode {
 
     @Override
     public void loop() {
-            if (gamepad1.right_trigger > .1) {
-                forward(.5);
-            }
-            if (gamepad1.right_trigger > .75) {
-                forward(1);
-            }
-            if (gamepad1.left_trigger > .1) {
-                backward(.5);
-            }
-            if (gamepad1.left_trigger > .75) {
-                backward(1);
-            }
-            if (gamepad1.right_bumper) {
-                TurnRight(.5);
-            }
-            if (gamepad1.left_bumper) {
-                TurnLeft(.5);
-            }
-            if (gamepad1.x) {
-                StrafeRight(.5);
-            }
+        if (gamepad1.right_trigger > .1) {
+            forward(.5);
+        }
+        if (gamepad1.right_trigger > .75) {
+            forward(1);
+        }
+        if (gamepad1.left_trigger > .1) {
+            backward(.5);
+        }
+        if (gamepad1.left_trigger > .75) {
+            backward(1);
+        }
+        if (gamepad1.right_bumper) {
+            TurnRight(.5);
+        }
+        if (gamepad1.left_bumper) {
+            TurnLeft(.5);
+        }
+        if (gamepad1.x) {
+            StrafeRight(.5);
+        }
         if (gamepad1.b) {
             StrafeLeft(.5);
         }
