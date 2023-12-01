@@ -55,28 +55,27 @@ public class TylerControlCode extends OpMode {
             if (gamepad1.x) {
                 StrafeRight(.5);
             }
-            if (gamepad1.b) {
-                StrafeLeft(.5);
-            }
-            if (gamepad2.right_bumper) {
-                ArmLift.setPower(-5);
-            }
-            if (gamepad2.left_bumper) {
-                ArmLift.setPower(5);
-            }
+        if (gamepad1.b) {
+            StrafeLeft(.5);
+        }
+        if (gamepad2.right_bumper) {
+            ArmLift.setPower(-5);
+        }
+        if (gamepad2.left_bumper) {
+            ArmLift.setPower(5);
+        }
         if (gamepad2.x) {
             Claw.setPosition(1);
         }
         if (gamepad2.b) {
             Claw.setPosition(0);
         }
-            FrontR.setPower(0);
-            BackR.setPower(0);
-            FrontL.setPower(0);
-            BackL.setPower(0);
-            ArmLift.setPower(0);
-
-        }
+        FrontR.setPower(0);
+        BackR.setPower(0);
+        FrontL.setPower(0);
+        BackL.setPower(0);
+        ArmLift.setPower(0);
+    }
 
         public void forward(double power){
             FrontR.setPower(power);
