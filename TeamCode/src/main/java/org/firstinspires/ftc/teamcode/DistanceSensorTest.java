@@ -37,7 +37,7 @@ public class DistanceSensorTest extends LinearOpMode {
         BackR.setDirection(DcMotorSimple.Direction.REVERSE);
         waitForStart();
         resetRuntime();
-        EncoderForward(1000, .75);
+        EncoderForward(800, .75);
         double left;
         double right;
         int direction;

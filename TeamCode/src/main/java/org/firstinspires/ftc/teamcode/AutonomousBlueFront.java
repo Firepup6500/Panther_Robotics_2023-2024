@@ -53,7 +53,7 @@ public class AutonomousBlueFront extends LinearOpMode {
             telemetry.addData("Runtime", getRuntime());
             telemetry.addData("Left", left);
             telemetry.addData("Right", right);
-            if (right <= 300) {
+            if (right <= 250) {
                 direction = 1;
                 telemetry.addData("Direction", "Right");
             } else if (left <= 270) {
