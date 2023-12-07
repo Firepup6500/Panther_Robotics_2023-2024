@@ -71,12 +71,13 @@ public class AutonomousBlueFront extends LinearOpMode {
 
             EncoderForward(500, .75);
             RightTurn(1200, .5);
-            EncoderForward(200, .5);
-            Claw.setPosition(0);
+            EncoderForward(100, .5);
+            Claw.setPosition(1);
+            sleep(2000);
             EncoderBackward(200, .5);
             LeftTurn(1100, .5);
             EncoderBackward(1400, .75);
-            LeftTurn(1240, .5);
+            LeftTurn(1235, .5);
             EncoderForward(4800, .5);
 
         }
@@ -85,21 +86,23 @@ public class AutonomousBlueFront extends LinearOpMode {
             EncoderForward(500, .75);
             LeftTurn(1200, .75);
             EncoderForward(200, .75);
-            Claw.setPosition(0);
+            Claw.setPosition(1);
+            sleep(2000);
             EncoderBackward(200, .5);
             RightTurn(1100, .5);
             EncoderBackward(1400, .75);
-            LeftTurn(1260, .5);
-            EncoderForward(4400, .5);
+            LeftTurn(1250, .5);
+            EncoderForward(4800, .5);
 
         }
         else if(direction == 0){
 
             EncoderForward(500, .5);
-            Claw.setPosition(0);
+            Claw.setPosition(1);
+            sleep(2000);
             EncoderBackward(1225, .75);
-            LeftTurn(1260, .5);
-            EncoderForward(4400, .5);
+            LeftTurn(1215, .5);
+            EncoderForward(4700, .5);
 
         }
 
