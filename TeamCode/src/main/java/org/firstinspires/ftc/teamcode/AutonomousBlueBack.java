@@ -56,7 +56,7 @@ public class AutonomousBlueBack extends LinearOpMode {
             if (right <= 250) {
                 direction = 1;
                 telemetry.addData("Direction", "Right");
-            } else if (left <= 320) {
+            } else if (left <= 200) {
                 direction = -1;
                 telemetry.addData("Direction", "Left");
             } else {

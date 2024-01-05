@@ -56,7 +56,7 @@ public class AutonomousRedBack extends LinearOpMode {
             if (right <= 250) {
                 direction = 1;
                 telemetry.addData("Direction", "Right");
-            } else if (left <= 350) {
+            } else if (left <= 200) {
                 direction = -1;
                 telemetry.addData("Direction", "Left");
             } else {
@@ -88,11 +88,9 @@ public class AutonomousRedBack extends LinearOpMode {
             EncoderForward(200, .75);
             Claw.setPosition(1);
             sleep(2000);
-            EncoderBackward(200, .5);
-            RightTurn(1100, .5);
-            EncoderBackward(1400, .75);
-            RightTurn(1260, .5);
-            EncoderForward(2000, .5);
+            EncoderBackward(2000, .5);
+            EncoderStrafeR(1200, .5);
+
 
         }
         else if(direction == 0){
@@ -199,6 +197,60 @@ public class AutonomousRedBack extends LinearOpMode {
         FrontL.setTargetPosition((int) -target);
         FrontR.setTargetPosition((int) -target);
         BackL.setTargetPosition((int) -target);
+        BackR.setTargetPosition((int) -target);
+
+        FrontL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        FrontR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        BackL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        BackR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        FrontL.setPower(speed);
+        FrontR.setPower(speed);
+        BackL.setPower(speed);
+        BackR.setPower(speed);
+
+        while (opModeIsActive() && isBusy()) {
+            idle();
+        }
+    }
+
+    private void EncoderStrafeR(double target, double speed){
+
+        FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
+        FrontL.setTargetPosition((int) target);
+        FrontR.setTargetPosition((int) -target);
+        BackL.setTargetPosition((int) -target);
+        BackR.setTargetPosition((int) target);
+
+        FrontL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        FrontR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        BackL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        BackR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        FrontL.setPower(speed);
+        FrontR.setPower(speed);
+        BackL.setPower(speed);
+        BackR.setPower(speed);
+
+        while (opModeIsActive() && isBusy()) {
+            idle();
+        }
+    }
+
+    private void EncoderStrafeL(double target, double speed){
+
+        FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        FrontR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        BackL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        BackR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
+        FrontL.setTargetPosition((int) -target);
+        FrontR.setTargetPosition((int) target);
+        BackL.setTargetPosition((int) target);
         BackR.setTargetPosition((int) -target);
 
         FrontL.setMode(DcMotor.RunMode.RUN_TO_POSITION);

@@ -42,7 +42,7 @@ public class AutonomousRedFront extends LinearOpMode {
 
 
             resetRuntime();
-            EncoderForward(800, .75);
+            EncoderForward(1000, .75);
 
             double left;
             double right;
@@ -56,7 +56,7 @@ public class AutonomousRedFront extends LinearOpMode {
                 if (right <= 250) {
                     direction = 1;
                     telemetry.addData("Direction", "Right");
-                } else if (left <= 350) {
+                } else if (left <= 200) {
                     direction = -1;
                     telemetry.addData("Direction", "Left");
                 } else {
@@ -78,7 +78,7 @@ public class AutonomousRedFront extends LinearOpMode {
                 LeftTurn(1100, .5);
                 EncoderBackward(1400, .75);
                 RightTurn(1240, .5);
-                EncoderForward(4800, .5);
+                EncoderForward(4600, .5);
 
             }
             else if(direction == -1){
