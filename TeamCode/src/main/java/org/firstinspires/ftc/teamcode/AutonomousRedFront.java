@@ -103,6 +103,14 @@ public class AutonomousRedFront extends LinearOpMode {
                 EncoderBackward(1225, .75);
                 RightTurn(1220, .5);
                 EncoderForward(4400, .5);
+
+                //EncoderForward(1000, .5);
+                //ArmLift(1000 ,5);
+                //sleep(2000);
+                //EncoderBackward(1500, .75);
+                //ArmLift(-1000, 5);
+                //RightTurn(1220, .5);
+                //EncoderForward(4400, .5);
                 
             }
 
@@ -215,6 +223,20 @@ public class AutonomousRedFront extends LinearOpMode {
                 idle();
             }
         }
+    private void ArmLift(double target, double speed){
+
+        ArmLift.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
+        ArmLift.setTargetPosition((int) target);
+
+        ArmLift.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        ArmLift.setPower(speed);
+
+        while (opModeIsActive() && isBusy()) {
+            idle();
+        }
+    }
 
     private boolean isBusy() {
         return FrontL.isBusy() && FrontR.isBusy() && BackL.isBusy() && BackR.isBusy();

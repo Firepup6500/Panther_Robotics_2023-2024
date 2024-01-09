@@ -216,6 +216,21 @@ public class AutonomousBlueBack extends LinearOpMode {
         }
     }
 
+    private void ArmLift(double target, double speed){
+
+        ArmLift.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
+        ArmLift.setTargetPosition((int) target);
+
+        ArmLift.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        ArmLift.setPower(speed);
+
+        while (opModeIsActive() && isBusy()) {
+            idle();
+        }
+    }
+
     private boolean isBusy() {
         return FrontL.isBusy() && FrontR.isBusy() && BackL.isBusy() && BackR.isBusy();
     }
