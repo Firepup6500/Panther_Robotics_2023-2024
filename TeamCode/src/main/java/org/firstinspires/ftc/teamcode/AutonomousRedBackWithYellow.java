@@ -69,46 +69,52 @@ public class AutonomousRedBackWithYellow extends LinearOpMode {
 
         if(direction == 1){
 
-            EncoderForward(500, .75);
-            RightTurn(1200, .5);
-            EncoderForward(200, .5);
+            EncoderForward(600, .75);
+            EncoderStrafeR(850, .5);
+            ArmLift(-400, 5);
             sleep(2000);
-            ArmLift(1000, 5);
-            EncoderBackward(200, .5);
-            ArmLift(-1000, 5);
-            LeftTurn(1100, .5);
-            EncoderBackward(1400, .75);
+            EncoderBackward(800, .5);
+            ArmLift(400, 5);
+            sleep(2000);
             LeftTurn(1260, .5);
-            EncoderBackward(2000, .5);
-            EncoderStrafeR(1200, .5);
-            ArmLift(1000, 5);
+            EncoderBackward(1200, .75);
+            EncoderStrafeR(200, .5);
+            ArmLift(-400, 5);
+            sleep(2000);
             Claw.setPosition(1);
+            sleep(2000);
+            ArmLift(400, 5);
+            sleep(2000);
+            EncoderStrafeR(1300, .5);
 
         }
         else if(direction == -1){
 
             EncoderForward(500, .75);
-            LeftTurn(1200, .75);
-            EncoderForward(200, .75);
+            LeftTurn(1250, .75);
+            EncoderForward(800, .75);
             sleep(2000);
-            ArmLift(1000, 5);
-            EncoderBackward(2000, .5);
+            ArmLift(-400, 5);
+            EncoderBackward(2600, .5);
             Claw.setPosition(1);
-            ArmLift(-1000, 5);
+            sleep(2000);
+            ArmLift(400, 5);
             EncoderStrafeR(1200, .5);
 
 
         }
         else if(direction == 0){
 
-            ArmLift(2000, 5);
-            EncoderForward(1300, .5);
-            EncoderBackward(1225, .75);
-            LeftTurn(1260, .5);
+            EncoderForward(1200, .5);
+            ArmLift(-400, 5);
+            sleep(2000);
+            EncoderBackward(850, .75);
+            LeftTurn(1320, .5);
             EncoderBackward(2000, .5);
             Claw.setPosition(1);
             sleep(2000);
-            EncoderStrafeR(1225, .75);
+            ArmLift(400, 5);
+            EncoderStrafeR(1400, .75);
 
         }
 
