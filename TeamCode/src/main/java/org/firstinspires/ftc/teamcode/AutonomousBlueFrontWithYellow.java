@@ -8,9 +8,9 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
-@Autonomous(name = "Autonomous Red Back With Yellow")
+@Autonomous(name = "Autonomous Blue Front With Yellow")
 
-public class AutonomousRedBackWithYellow extends LinearOpMode {
+public class AutonomousBlueFrontWithYellow extends LinearOpMode {
 
     DcMotor FrontR;
     DcMotor BackR;
@@ -56,7 +56,7 @@ public class AutonomousRedBackWithYellow extends LinearOpMode {
             if (right <= 250) {
                 direction = 1;
                 telemetry.addData("Direction", "Right");
-            } else if (left <= 200) {
+            } else if (left <= 300) {
                 direction = -1;
                 telemetry.addData("Direction", "Left");
             } else {
@@ -69,52 +69,66 @@ public class AutonomousRedBackWithYellow extends LinearOpMode {
 
         if(direction == 1){
 
-            EncoderForward(600, .75);
-            EncoderStrafeR(850, .5);
+            EncoderForward(800, .75);
+            EncoderStrafeR(800, .5);
             ArmLift(-75, 5);
             sleep(2000);
-            EncoderBackward(800, .5);
+            EncoderBackward(750, .5);
             ArmLift(75, 5);
             sleep(2000);
-            LeftTurn(1260, .5);
-            EncoderBackward(1200, .75);
-            EncoderStrafeR(200, .5);
+            EncoderBackward(950, .5);
+            RightTurn(1270, .5);
+            EncoderBackward(5300, .75);
+            EncoderStrafeL(1600, .5);
             ArmLift(-600, 5);
             sleep(2000);
             Claw.setPosition(1);
             sleep(2000);
             ArmLift(400, 5);
             sleep(2000);
-            EncoderStrafeR(1300, .5);
 
         }
         else if(direction == -1){
 
             EncoderForward(500, .75);
             LeftTurn(1250, .75);
-            EncoderForward(800, .75);
+            EncoderForward(1000, .75);
             sleep(2000);
+            ArmLift(-75, 5);
+            EncoderBackward(800, .5);
+            ArmLift(75, 5);
+            sleep(2000);
+            RightTurn(1100, .75);
+            EncoderBackward(1500, .5);
+            RightTurn(1250, .75);
+            EncoderBackward(4800, .5);
+            EncoderStrafeL(1200, .5);
             ArmLift(-600, 5);
-            EncoderBackward(2600, .5);
+            sleep(2000);
             Claw.setPosition(1);
             sleep(2000);
             ArmLift(400, 5);
-            EncoderStrafeR(1200, .5);
-
+            sleep(2000);
 
         }
         else if(direction == 0){
 
-            EncoderForward(1200, .5);
+            EncoderForward(1300, .5);
+            ArmLift(-75, 5);
+            sleep(2000);
+            EncoderBackward(1200, .75);
+            ArmLift(75, 5);
+            sleep(2000);
+            EncoderBackward(1000, .75);
+            RightTurn(1360, .5);
+            EncoderBackward(5000, .5);
+            EncoderStrafeL(1200, .5);
             ArmLift(-600, 5);
             sleep(2000);
-            EncoderBackward(850, .75);
-            LeftTurn(1320, .5);
-            EncoderBackward(2000, .5);
             Claw.setPosition(1);
             sleep(2000);
             ArmLift(400, 5);
-            EncoderStrafeR(1400, .75);
+            sleep(2000);
 
         }
 

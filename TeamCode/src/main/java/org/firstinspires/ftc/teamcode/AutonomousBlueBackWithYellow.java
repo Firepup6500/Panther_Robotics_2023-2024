@@ -73,7 +73,7 @@ public class AutonomousBlueBackWithYellow extends LinearOpMode {
             RightTurn(1200, .5);
             EncoderForward(800, .5);
             EncoderBackward(400, .5);
-            ArmLift(-400, 5);
+            ArmLift(-600, 5);
             sleep(2000);
             EncoderBackward(2200, .5);
             Claw.setPosition(1);
@@ -86,15 +86,15 @@ public class AutonomousBlueBackWithYellow extends LinearOpMode {
 
             EncoderForward(600, .75);
             EncoderStrafeL(850, .5);
-            ArmLift(-400, 5);
+            ArmLift(-75, 5);
             sleep(2000);
             EncoderBackward(1000, .5);
-            ArmLift(400, 5);
+            ArmLift(75, 5);
             sleep(2000);
             RightTurn(1260, .5);
             EncoderBackward(1400, .75);
             EncoderStrafeL(600, .5);
-            ArmLift(-400, 5);
+            ArmLift(-600, 5);
             sleep(2000);
             Claw.setPosition(1);
             sleep(2000);
@@ -106,7 +106,7 @@ public class AutonomousBlueBackWithYellow extends LinearOpMode {
         else if(direction == 0){
 
             EncoderForward(1200, .5);
-            ArmLift(-400, 5);
+            ArmLift(-600, 5);
             sleep(2000);
             EncoderBackward(850, .75);
             RightTurn(1320, .5);
