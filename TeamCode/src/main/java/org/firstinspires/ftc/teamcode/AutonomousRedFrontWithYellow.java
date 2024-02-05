@@ -53,7 +53,7 @@ public class AutonomousRedFrontWithYellow extends LinearOpMode {
             telemetry.addData("Runtime", getRuntime());
             telemetry.addData("Left", left);
             telemetry.addData("Right", right);
-            if (right <= 250) {
+            if (right <= 220) {
                 direction = 1;
                 telemetry.addData("Direction", "Right");
             } else if (left <= 200) {
@@ -71,7 +71,7 @@ public class AutonomousRedFrontWithYellow extends LinearOpMode {
 
             EncoderForward(500, .75);
             RightTurn(1250, .75);
-            EncoderForward(1000, .75);
+            EncoderForward(900, .75);
             sleep(2000);
             ArmLift(-75, 5);
             EncoderBackward(1000, .5);
@@ -80,8 +80,8 @@ public class AutonomousRedFrontWithYellow extends LinearOpMode {
             LeftTurn(1200, .75);
             EncoderBackward(1500, .5);
             LeftTurn(1100, .75);
-            EncoderBackward(4900, .5);
-            EncoderStrafeR(1200, .5);
+            EncoderBackward(4800, .5);
+            EncoderStrafeR(1000, .5);
             ArmLift(-600, 5);
             sleep(2000);
             Claw.setPosition(1);
@@ -100,8 +100,8 @@ public class AutonomousRedFrontWithYellow extends LinearOpMode {
             ArmLift(75, 5);
             sleep(2000);
             EncoderBackward(600, .5);
-            LeftTurn(1100, .5);
-            EncoderBackward(4950, .75);
+            LeftTurn(1150, .5);
+            EncoderBackward(5000, .75);
             EncoderStrafeR(1800, .5);
             ArmLift(-600, 5);
             sleep(2000);
@@ -133,7 +133,6 @@ public class AutonomousRedFrontWithYellow extends LinearOpMode {
         }
 
     }
-
     private void EncoderForward(double target, double speed){
 
         FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);

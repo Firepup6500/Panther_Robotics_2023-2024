@@ -13,7 +13,7 @@ public class TylerControlCode extends OpMode {
     DcMotor FrontL;
     DcMotor BackL;
     DcMotor ArmLift;
-    DcMotor LiftMotor;
+    
     DcMotor Hanging;
     Servo Claw;
     Servo LiftServo;
@@ -31,7 +31,6 @@ public class TylerControlCode extends OpMode {
         Hanging = hardwareMap.get(DcMotor.class,"hanging_motor");
         Claw = hardwareMap.get(Servo.class,"Claw");
         Drone = hardwareMap.get(Servo.class,"Drone");
-
 
         telemetry.addData("ftc", "first");
         telemetry.addData("Init", "is a success");
@@ -82,12 +81,12 @@ public class TylerControlCode extends OpMode {
         if (gamepad2.a) {
             Drone.setPosition(1);
         }
-        /*if (gamepad2.dpad_up ) {
-            Drone.setPosition(1);
+        if (gamepad2.dpad_up ) {
+            Hanging.setPower(-5);
         }
         if (gamepad2.dpad_down) {
-            Drone.setPosition(0);
-        }*/
+            Hanging.setPower(-5);
+        }
         FrontR.setPower(0);
         BackR.setPower(0);
         FrontL.setPower(0);

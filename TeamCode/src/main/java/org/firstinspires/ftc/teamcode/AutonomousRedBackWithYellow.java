@@ -53,10 +53,10 @@ public class AutonomousRedBackWithYellow extends LinearOpMode {
             telemetry.addData("Runtime", getRuntime());
             telemetry.addData("Left", left);
             telemetry.addData("Right", right);
-            if (right <= 250) {
+            if (right <= 220) {
                 direction = 1;
                 telemetry.addData("Direction", "Right");
-            } else if (left <= 200) {
+            } else if (left <= 220) {
                 direction = -1;
                 telemetry.addData("Direction", "Left");
             } else {
@@ -94,11 +94,14 @@ public class AutonomousRedBackWithYellow extends LinearOpMode {
             LeftTurn(1250, .75);
             EncoderForward(800, .75);
             sleep(2000);
+            ArmLift(-75, 5);
+            EncoderBackward(400, .5);
             ArmLift(-600, 5);
-            EncoderBackward(2600, .5);
+            EncoderBackward(2200, .5);
             Claw.setPosition(1);
             sleep(2000);
             ArmLift(400, 5);
+            sleep(2000);
             EncoderStrafeR(1200, .5);
 
 

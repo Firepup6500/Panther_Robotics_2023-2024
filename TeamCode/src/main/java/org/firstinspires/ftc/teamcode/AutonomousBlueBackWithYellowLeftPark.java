@@ -8,9 +8,9 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
-@Autonomous(name = "Autonomous Blue Back With Yellow")
+@Autonomous(name = "Autonomous Blue Back With Yellow Left Park")
 
-public class AutonomousBlueBackWithYellow extends LinearOpMode {
+public class AutonomousBlueBackWithYellowLeftPark extends LinearOpMode {
 
     DcMotor FrontR;
     DcMotor BackR;
@@ -80,7 +80,7 @@ public class AutonomousBlueBackWithYellow extends LinearOpMode {
             sleep(2000);
             ArmLift(400, 5);
             sleep(2000);
-            EncoderStrafeL(1000, .5);
+            EncoderStrafeR(1400, .5);
         }
         else if(direction == -1){
 
@@ -100,7 +100,7 @@ public class AutonomousBlueBackWithYellow extends LinearOpMode {
             sleep(2000);
             ArmLift(400, 5);
             sleep(2000);
-            EncoderStrafeL(1300, .5);
+            EncoderStrafeR(1300, .5);
 
         }
         else if(direction == 0){
@@ -116,7 +116,7 @@ public class AutonomousBlueBackWithYellow extends LinearOpMode {
             sleep(2000);
             ArmLift(400, 5);
             sleep(2000);
-            EncoderStrafeL(900, .5);
+            EncoderStrafeR(1200, .5);
         }
 
     }

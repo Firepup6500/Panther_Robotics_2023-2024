@@ -8,9 +8,9 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
-@Autonomous(name = "Autonomous Blue Back With Yellow")
+@Autonomous(name = "Autonomous Red Back With Yellow Left Park")
 
-public class AutonomousBlueBackWithYellow extends LinearOpMode {
+public class AutonomousRedBackWithYellowRightPark extends LinearOpMode {
 
     DcMotor FrontR;
     DcMotor BackR;
@@ -56,7 +56,7 @@ public class AutonomousBlueBackWithYellow extends LinearOpMode {
             if (right <= 220) {
                 direction = 1;
                 telemetry.addData("Direction", "Right");
-            } else if (left <= 250) {
+            } else if (left <= 220) {
                 direction = -1;
                 telemetry.addData("Direction", "Left");
             } else {
@@ -69,54 +69,56 @@ public class AutonomousBlueBackWithYellow extends LinearOpMode {
 
         if(direction == 1){
 
-            EncoderForward(500, .75);
-            RightTurn(1200, .5);
-            EncoderForward(820, .5);
-            EncoderBackward(400, .5);
+            EncoderForward(600, .75);
+            EncoderStrafeR(850, .5);
+            ArmLift(-75, 5);
+            sleep(2000);
+            EncoderBackward(800, .5);
+            ArmLift(75, 5);
+            sleep(2000);
+            LeftTurn(1260, .5);
+            EncoderBackward(1200, .75);
+            EncoderStrafeR(200, .5);
             ArmLift(-600, 5);
             sleep(2000);
-            EncoderBackward(2400, .5);
             Claw.setPosition(1);
             sleep(2000);
             ArmLift(400, 5);
             sleep(2000);
-            EncoderStrafeL(1000, .5);
+            EncoderStrafeL(1500, .5);
+
         }
         else if(direction == -1){
 
-            EncoderForward(600, .75);
-            EncoderStrafeL(850, .5);
+            EncoderForward(500, .75);
+            LeftTurn(1250, .75);
+            EncoderForward(800, .75);
+            sleep(2000);
             ArmLift(-75, 5);
-            sleep(2000);
-            EncoderBackward(1000, .5);
-            ArmLift(75, 5);
-            sleep(2000);
-            RightTurn(1200, .5);
-            EncoderBackward(1400, .75);
-            EncoderStrafeL(600, .5);
+            EncoderBackward(400, .5);
             ArmLift(-600, 5);
-            sleep(2000);
+            EncoderBackward(2200, .5);
             Claw.setPosition(1);
             sleep(2000);
             ArmLift(400, 5);
             sleep(2000);
-            EncoderStrafeL(1300, .5);
+            EncoderStrafeL(1400, .5);
+
 
         }
         else if(direction == 0){
 
-            EncoderForward(1300, .5);
+            EncoderForward(1200, .5);
             ArmLift(-600, 5);
             sleep(2000);
             EncoderBackward(850, .75);
-            RightTurn(1320, .5);
-            EncoderBackward(2200, .5);
-            EncoderStrafeL(400, .5);
+            LeftTurn(1320, .5);
+            EncoderBackward(2000, .5);
             Claw.setPosition(1);
             sleep(2000);
             ArmLift(400, 5);
-            sleep(2000);
-            EncoderStrafeL(900, .5);
+            EncoderStrafeL(1600, .75);
+
         }
 
     }
@@ -229,20 +231,6 @@ public class AutonomousBlueBackWithYellow extends LinearOpMode {
         }
     }
 
-    private void ArmLift(double target, double speed){
-
-        ArmLift.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-
-        ArmLift.setTargetPosition((int) target);
-
-        ArmLift.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-
-        ArmLift.setPower(speed);
-
-        while (opModeIsActive() && isBusy()) {
-            idle();
-        }
-    }
     private void EncoderStrafeR(double target, double speed){
 
         FrontL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -296,6 +284,22 @@ public class AutonomousBlueBackWithYellow extends LinearOpMode {
             idle();
         }
     }
+
+    private void ArmLift(double target, double speed){
+
+        ArmLift.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
+        ArmLift.setTargetPosition((int) target);
+
+        ArmLift.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        ArmLift.setPower(speed);
+
+        while (opModeIsActive() && isBusy()) {
+            idle();
+        }
+    }
+
     private boolean isBusy() {
         return FrontL.isBusy() && FrontR.isBusy() && BackL.isBusy() && BackR.isBusy();
     }

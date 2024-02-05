@@ -95,7 +95,7 @@ public class AutonomousBlueFrontWithYellow extends LinearOpMode {
             EncoderForward(1000, .75);
             sleep(2000);
             ArmLift(-75, 5);
-            EncoderBackward(800, .5);
+            EncoderBackward(1000, .5);
             ArmLift(75, 5);
             sleep(2000);
             RightTurn(1100, .75);
@@ -120,7 +120,7 @@ public class AutonomousBlueFrontWithYellow extends LinearOpMode {
             ArmLift(75, 5);
             sleep(2000);
             EncoderBackward(1000, .75);
-            RightTurn(1360, .5);
+            RightTurn(1300, .5);
             EncoderBackward(5000, .5);
             EncoderStrafeL(1200, .5);
             ArmLift(-600, 5);
